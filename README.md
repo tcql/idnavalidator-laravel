@@ -27,11 +27,11 @@ IDNAValidator can be used just like any Laravel\URL method;
 
 Since IDNAValidator\URL directly extends Laravel\URL, you can alias it so that any Laravel class that uses URL will use IDNAValidator\URL instead. This is necessary if you want HTML::link (or others) to use international validation as well.
 
-To do the alias replacement, find the 'aliases' array in ```application/config/application.php```, and replace
+To do the alias replacement, find the 'aliases' array in ```application/config/application.php```, and comment out 
 
 	'URL'        => 'Laravel\\URL',
 
-with
+and then add the following, anywhere in the array that is above the 'HTML' alias.
 
 	'URL'        => 'IDNAValidator\\URL',
 
