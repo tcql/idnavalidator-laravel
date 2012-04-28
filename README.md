@@ -19,6 +19,7 @@ Updated URL validation methods for Laravel that allow linking to International D
 
 ## Usage
 IDNAValidator can be used just like any Laravel\URL method;
+
 	print IDNAValidator\URL::to($intlurl);
 
 
@@ -27,12 +28,15 @@ IDNAValidator can be used just like any Laravel\URL method;
 Since IDNAValidator\URL directly extends Laravel\URL, you can alias it so that any Laravel class that uses URL will use IDNAValidator\URL instead. This is necessary if you want HTML::link (or others) to use international validation as well.
 
 To do the alias replacement, find the 'aliases' array in ```application/config/application.php```, and replace
+
 	'URL'        => 'Laravel\\URL',
 
 with
+
 	'URL'        => 'IDNAValidator\\URL',
 
 Once you've replaced the alias, you should be able to use URL methods like normal:
+
 	URL::to_route($route);
 
 
