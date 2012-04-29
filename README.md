@@ -1,7 +1,9 @@
-idnavalidator-laravel
+﻿idnavalidator-laravel
 =====================
 
 Updated URL validation methods for Laravel that allow linking to International Domain Names (IDN)
+
+## NOTE: this bundle is currently unavailable/nonfunctional
 
 ## Installation
 
@@ -20,7 +22,7 @@ Updated URL validation methods for Laravel that allow linking to International D
 ## Usage
 IDNAValidator can be used just like any Laravel\URL method;
 
-	print IDNAValidator\URL::to($intlurl);
+	print IDNAValidator\URL::to('http://äöü.com/');
 
 
 ## Replacing Laravel\URL
@@ -31,7 +33,7 @@ To do the alias replacement, find the 'aliases' array in ```application/config/a
 
 	'URL'        => 'Laravel\\URL',
 
-and then add the following, anywhere in the array that is above the 'HTML' alias.
+and then add the following
 
 	'URL'        => 'IDNAValidator\\URL',
 
@@ -39,4 +41,8 @@ Once you've replaced the alias, you should be able to use URL methods like norma
 
 	URL::to_route($route);
 
+And things like 
 
+	HTML::link('http://äöü.com/','Link');
+
+will work with IDN urls
